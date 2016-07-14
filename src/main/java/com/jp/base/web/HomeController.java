@@ -1,4 +1,4 @@
-package com.jp.base.controller;
+package com.jp.base.web;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -15,11 +15,11 @@ public class HomeController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
 
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        System.out.println(principal);
+//        System.out.println(principal);
 
-        model.addAttribute("username", principal);
+//        model.addAttribute("username", principal);
 
         return "index";
     }

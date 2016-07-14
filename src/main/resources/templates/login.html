@@ -3,14 +3,22 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title>Spring Security Example </title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="appBase/appBase.js"></script>
+    <script src="appBase/components/signup/signupModule.js"></script>
+    <script src="appBase/components/signup/signupController.js"></script>
+    <script src="appBase/components/user/userModule.js"></script>
+    <script src="appBase/components/user/userController.js"></script>
 </head>
-<body>
+<body ng-app="appBase">
 <!--<div th:if="${param.error}">-->
     <!--Invalid username and password.-->
 <!--</div>-->
 <!--<div th:if="${param.logout}">-->
     <!--You have been logged out.-->
 <!--</div>-->
+<h1>login.html</h1>
 <h1>LOG IN:</h1>
 <form th:action="@{/login}" method="post">
     <div><label> User Name: <input type="text" name="username"/> </label></div>
@@ -19,13 +27,15 @@
 </form>
 
 <h1>OR:</h1>
+<p>{{ message }}</p>
 
-<div >
+<div ng-controller="userController">
+    <button ng-click="addUser(username, password)">add user!</button>
     <form action="" method="post">
-        <p>create an accoutn:</p>
-        <div><label> User Name: <input type="text" name="username"/> </label></div>
-        <div><label> Password: <input type="password" name="password"/> </label></div>
-        <div><input type="submit" value="Sign In"/></div>
+        <p>create an account:</p>
+        <div><label> User Name: <input type="text" name="username_f" ng-model="username"/> </label></div>
+        <div><label> Password: <input type="password" name="password_f" ng-model="password"/> </label></div>
+        <div><input type="submit" value="Create"/></div>
     </form>
 </div>
 

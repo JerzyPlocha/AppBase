@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-
 <!--<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>-->
-
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="appBase/appBase.js"></script>
     <script src="appBase/components/signup/signupModule.js"></script>
     <script src="appBase/components/signup/signupController.js"></script>
+    <script src="appBase/components/user/userModule.js"></script>
+    <script src="appBase/components/user/userController.js"></script>
 </head>
 <body ng-app="appBase">
+
+<h1>AppBase</h1>
+
+<div ng-view="true">
+
+</div>
 
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out"/>
 </form>
 
-<h1>Hello World!</h1>
-
-<p>{{2+2}}</p>
 </body>
 </html>
