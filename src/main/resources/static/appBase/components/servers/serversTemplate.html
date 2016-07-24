@@ -1,0 +1,30 @@
+<div>
+
+    <p>Servers:</p>
+
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th class="col-md-4"></th>
+                <th class="col-md-4">Name</th>
+                <th class="col-md-4"></th>
+            </tr>
+            <tr ng-repeat="server in servers">
+                <!--<td>{{ $index + 1}}</td>-->
+                <td>{{ server.id }}</td>
+                <td>{{ server.name }}</td>
+                <td>
+                    <button class="btn-danger" ng-click="deleteServer(server)"></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <form class="form-inline">
+        <div>
+            <input class="form-control" placeholder="server name" ng-model="newServerName" type="text">
+            <button type="submit" class="btn-primary" ng-click="saveServer(newServerName); newServerName = ''">dodaj</button>
+        </div>
+    </form>
+
+</div>

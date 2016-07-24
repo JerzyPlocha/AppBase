@@ -2,25 +2,39 @@
 <!--<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>-->
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="appBase/appBase.js"></script>
-    <script src="appBase/components/signup/signupModule.js"></script>
-    <script src="appBase/components/signup/signupController.js"></script>
-    <script src="appBase/components/user/userModule.js"></script>
-    <script src="appBase/components/user/userController.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"></link>
 </head>
 <body ng-app="appBase">
 
-<h1>AppBase</h1>
+<header>
+    <nav class="navbar navbar-default">
+        <form class="navbar-form navbar-right" th:action="@{/logout}" method="post">
+            <button class="btn btn-default" type="submit">wyloguj</button>
+        </form>
+    </nav>
+</header>
 
-<div ng-view="true">
 
+<div class="container">
+    <div ng-view="true"></div>
 </div>
 
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="appBase/components/signup/signupModule.js"></script>
+<script src="appBase/components/signup/signupController.js"></script>
+
+<script src="appBase/components/servers/serversModule.js"></script>
+<script src="appBase/components/servers/serversService.js"></script>
+<script src="appBase/components/servers/serversController.js"></script>
+
+<script src="appBase/components/user/userModule.js"></script>
+<script src="appBase/components/user/userController.js"></script>
+
+<script src="appBase/appBase.js"></script>
 
 </body>
 </html>
