@@ -20,7 +20,7 @@ public class DataConfig {
         ds.setUrl("jdbc:mysql://localhost:3306/base");
         ds.setDriverClassName("com.mysql.jdbc.Driver");
         ds.setUsername("root");
-        ds.setPassword("123qwe");
+        ds.setPassword("1234");
         ds.setInitialSize(2);
         ds.setMaxTotal(5);
 
